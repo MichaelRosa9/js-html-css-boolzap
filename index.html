@@ -27,7 +27,6 @@
           </div>
         </div> <!-- /account avatar + account name -->
 
-
         <div class="account-buttons"> <!-- account buttons -->
           <button class="circle">
             <i class="fas fa-circle-notch"></i> <!-- spinner circle icon -->
@@ -59,30 +58,41 @@
         </div>
       </div> <!-- /notification update -->
 
-      <nav> <!-- nav containing search bar text and contacts -->
-        <div class="search-bar"> <!-- search bar -->
+      <nav> <!-- nav containing search bar text and contact-list -->
+        <div class="search-bar">
           <input type="text" placeholder="Cerca o inizia una nuova chat" value="">
           <i class="fas fa-search"></i> <!-- search icon -->
-        </div> <!-- /search bar -->
+        </div> 
 
-        <ul class="contacts"> <!-- contacts -->
+        <ul class="contact-list"> <!-- contact-list -->
           
+          <li
+            v-for="contact in contacts"
+          >
+          <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
+            <img :src="addImageToAvatar(contact.avatar)" alt="">
+            <span>
+              {{contact.name}}
+            </span>
+          </li>
+
+          <!-- 
           <li class="contact">
             <img src="img/avatar_1.jpg" alt="">
             <span>
               Michele
             </span>
-          </li>
-
+          </li> -->
+<!-- 
           <li class="contact">
             <img src="img/avatar_2.jpg" alt="">
             <span>
               Fabio
             </span>
-          </li>
+          </li> -->
 
-        </ul> <!-- /contacts -->
-      </nav> <!-- /nav containing search bar text and contacts -->
+        </ul> <!-- /contact-list -->
+      </nav> <!-- /nav containing search bar text and contact-list -->
 
 
     </aside> <!-- /left -->

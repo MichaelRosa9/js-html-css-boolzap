@@ -93,6 +93,9 @@ var app = new Vue({
     ]
   },
   methods: {
-
+    addImageToAvatar(image){
+      return `../img/avatar${image}.jpg`;
+      /* return "../img/avatar" + image + ".jpg"; */
+    }
   }
 });
