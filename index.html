@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
@@ -17,18 +17,18 @@
 
     <aside class="left"> <!-- left -->
 
-      <div class="user-info"> <!-- user info -->
+      <header id="account" class="account-info"> <!-- account info -->
         
-        <div class="user"> <!-- user avatar + user name -->
+        <div class="account"> <!-- account avatar + account name -->
           <img src="img/avatar_io.jpg" alt="">
           
-          <span class="user-name">
+          <div class="name">
             Nome Utente
-          </span>
-        </div> <!-- /user avatar + user name -->
+          </div>
+        </div> <!-- /account avatar + account name -->
 
 
-        <div class="user-buttons"> <!-- user buttons -->
+        <div class="account-buttons"> <!-- account buttons -->
           <button class="circle">
             <i class="fas fa-circle-notch"></i> <!-- spinner circle icon -->
           </button>
@@ -40,9 +40,9 @@
           <button class="settings">
             <i class="fas fa-ellipsis-v"></i> <!-- settings icon -->
           </button>
-        </div> <!-- /user buttons -->
+        </div> <!-- /account buttons -->
 
-      </div> <!-- /user info -->
+      </header> <!-- /account info -->
 
       <div class="notification-update"> <!-- notification update -->
 
@@ -59,11 +59,10 @@
         </div>
       </div> <!-- /notification update -->
 
-      <nav>
-
+      <nav> <!-- nav containing search bar text and contacts -->
         <div class="search-bar"> <!-- search bar -->
           <input type="text" placeholder="Cerca o inizia una nuova chat" value="">
-          <i class="fas fa-search"></i>
+          <i class="fas fa-search"></i> <!-- search icon -->
         </div> <!-- /search bar -->
 
         <ul class="contacts"> <!-- contacts -->
@@ -74,6 +73,7 @@
               Michele
             </span>
           </li>
+
           <li class="contact">
             <img src="img/avatar_2.jpg" alt="">
             <span>
@@ -82,15 +82,44 @@
           </li>
 
         </ul> <!-- /contacts -->
-
-      </nav>
+      </nav> <!-- /nav containing search bar text and contacts -->
 
 
     </aside> <!-- /left -->
 
-    <main class="right">
+    <main class="right"> <!-- right -->
       
-      <header></header>
+      <header id="contact" class="account-info"> <!-- contact info -->
+      
+        <div class="account"> <!-- account account + account name -->
+          <img src="img//avatar_1.jpg" alt="">
+          
+          <div class="contact-name-log">
+            <div class="name">
+              Michele
+            </div>
+            <div class="last-log">
+              Ultimo accesso oggi alle
+            </div>
+          </div>
+        </div> <!-- /account account + account name -->
+
+
+        <div class="account-buttons"> <!-- account buttons -->
+          <button class="circle">
+            <i class="fas fa-search"></i> <!-- search icon -->
+          </button>
+  
+          <button class="message">
+            <i class="fas fa-paperclip"></i> <!-- paperclip icon -->
+          </button>
+
+          <button class="settings">
+            <i class="fas fa-ellipsis-v"></i> <!-- settings icon -->
+          </button>
+        </div> <!-- /account buttons -->
+
+      </header> <!-- /contact info -->      
 
       <section></section>
 
@@ -98,7 +127,7 @@
         
       </footer>
 
-    </main>
+    </main> <!-- /right -->
 
 
   </div>

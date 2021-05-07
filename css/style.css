@@ -33,35 +33,38 @@ float: left;
 height: 100%;
 }
 
-/* container left */
-.container .left {
-  width: 35%;
+.container .right header,
+.container .right footer,
+.container .left header {
+  height: 70px;
+  background-color: #E7E7E7;
 }
 
-/* user info  */
-.container .left .user-info {
+/* avatar info  */
+.container .left .account-info,
+.container .right .account-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-right: solid 1px lightgrey;
 }
 
-.user-info .user {
+.account-info .account {
   display: flex;
   align-items: center;
   margin-left: 10px;
 }
 
-.user-info .user img {
+.account-info .account img {
   width: 10%;
   border-radius: 50%;
 }
 
-.user-info .user-buttons {
+.account-info .account-buttons {
   width: 100px;
 }
 
-.user-info .user-buttons button {
+.account-info .account-buttons button {
   border: none;
   background-color: transparent;
   margin-right: 10px;
@@ -69,7 +72,13 @@ height: 100%;
   color: #A8A8A8;
   cursor: pointer;
 }
-/* END of user info */
+/* END of avatar info */
+
+
+/* container left */
+.container .left {
+  width: 35%;
+}
 
 
 /* notification update */
@@ -177,12 +186,18 @@ nav .search-bar i {
   background-color: thistle;
 }
 
-.container .right header,
-.container .right footer,
-.container .left .user-info {
-  height: 70px;
-  background-color: #E7E7E7;
+#contact .contact-name-log {
+  margin-left: 10px;
 }
+
+#contact .contact-name-log .last-log{
+  margin-top: 3px;
+  font-size: 13px;
+  color: grey;
+}
+
+
+
 
 
 .container .right section {
