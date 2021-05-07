@@ -202,11 +202,51 @@ nav .search-bar i {
 /* END right header */
 
 
+/* message section */
 .container .right section {
+  position: relative;
   height: calc(100% - 140px);
   background-image: url(../img/mine.jpg);
   overflow: auto;
 }
+
+.right section .message {
+ display: table;
+ content: '';
+ clear: both;
+ width: 100%;
+ margin-top: 20px;
+}
+
+.message .my-message {
+  float: right;
+  margin-right: 50px;
+  background-color: #CCF8B5;
+}
+
+.message .contact-message {
+  float: left;
+  margin-left: 50px;
+  background-color: white;
+}
+
+.message .speech-bubble {
+  position: relative;
+  max-width: 290px;
+  min-width: 200px;
+  padding: 15px 50px 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+}
+
+.date {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  font-size: 10px;
+  color: grey;
+}
+/* /message section */
 
 
 /* footer */
@@ -228,7 +268,10 @@ nav .search-bar i {
   font-size: 14px;
 }
 
-.right footer i {
+.right footer button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
   font-size: 23px;
 }
 
