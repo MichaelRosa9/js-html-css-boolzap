@@ -38,7 +38,7 @@ height: 100%;
   width: 35%;
 }
 
-/* user-info  */
+/* user info  */
 .container .left .user-info {
   display: flex;
   justify-content: space-between;
@@ -69,7 +69,7 @@ height: 100%;
   color: #A8A8A8;
   cursor: pointer;
 }
-/* END of user-info */
+/* END of user info */
 
 
 /* notification update */
@@ -100,18 +100,20 @@ height: 100%;
   text-decoration: underline;
   cursor: pointer;
 }
+/* END notification update */
 
 
 /* nav */
 .left nav {
-  height: calc(100% - 170px);
+  height: calc(100% - 150px);
   background-color: #F9F9F9;
 }
 
+/* search bar */
 nav .search-bar {
   position: relative;
   width: 100%;
-  height: 45px;
+  height: 50px;
   padding: 8px;
   color: grey;
 }
@@ -119,6 +121,7 @@ nav .search-bar {
 nav .search-bar input {
   width: 100%;
   height: 100%;
+  font-size: 14px;
   padding: 5px 50px;
   border: none;
   outline: none;
@@ -130,6 +133,18 @@ nav .search-bar i {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+/* END search bar */
+
+/* contacts */
+.left .contacts {
+  height: calc(100% - 50px);
+  margin-right: 10px;
+  background-color: white;
+  border-right: solid 1px rgba(0, 0, 0, .1);
+}
+/* END contacts */
+
+
 /* container right */
 .container .right {
   width: 65%;
