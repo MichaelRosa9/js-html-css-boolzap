@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient( to bottom,
+    /* con il linear gradient nelle parentesi posso decidere la direzione di dove colorare il div e da che punto a che punto posso decidere che colore assegnargli. */
+    #249688 0px,
+    #249688 15vh,
+    #DADBD4 15vh,
+    #DADBD4 100vh
+  );
+}
+
+
+.container {
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+  background-color: white;
+}
+
+.container .left,
+.container .right {
+float: left;
+height: 100%;
+}
+
+/* container left */
+.container .left {
+  width: 35%;
+}
+
+.container .left .notification-update {
+  height : 100px;
+  background-color: #78D5F9;
+}
+
+/* nav */
+.container .left nav {
+  height: calc(100% - 170px);
+  background-color: #F9F9F9;
+}
+
+nav .search-bar {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding: 8px;
+  color: grey;
+}
+
+nav .search-bar input {
+  width: 100%;
+  height: 100%;
+  padding: 5px 40px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+}
+nav .search-bar i {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* container right */
+.container .right {
+  width: 65%;
+  background-color: thistle;
+}
+
+.container .right header,
+.container .right footer,
+.container .left .user-info {
+  height: 70px;
+  background-color: #DADBD4;
+}
+
+
+.container .right section {
+  height: calc(100% - 140px);
+  overflow: auto;
+}
+
+.container .right footer {
+  opacity: .7;
+}
