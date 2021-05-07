@@ -285,6 +285,7 @@ nav .search-bar i {
   background-color: transparent;
   color: inherit;
   font-size: 23px;
+  cursor: pointer;
 }
 
 /* END footer */
