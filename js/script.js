@@ -6,6 +6,7 @@ Replica della grafica con la possibilità di avere messaggi scritti dall’utent
 var app = new Vue({
   el: '#app',
   data: {
+    search:'',
     contacts: [
       {
         name: 'Michele',
@@ -96,6 +97,13 @@ var app = new Vue({
     addImageToAvatar(image){
       return `../img/avatar${image}.jpg`;
       /* return "../img/avatar" + image + ".jpg"; */
+    },
+  },computed: {
+    filterContacts(){
+      return this.contacts.filter((element) => {
+        return element.name.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
   }
+  
 });

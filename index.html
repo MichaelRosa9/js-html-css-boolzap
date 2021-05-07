@@ -60,37 +60,24 @@
 
       <nav> <!-- nav containing search bar text and contact-list -->
         <div class="search-bar">
-          <input type="text" placeholder="Cerca o inizia una nuova chat" value="">
+          <input type="text" 
+          v-model="search" 
+          placeholder="Cerca o inizia una nuova chat"            
+          >
           <i class="fas fa-search"></i> <!-- search icon -->
         </div> 
 
         <ul class="contact-list"> <!-- contact-list -->
           
           <li
-            v-for="contact in contacts"
+            v-for="contact in filterContacts"
           >
           <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
             <img :src="addImageToAvatar(contact.avatar)" alt="">
             <span>
               {{contact.name}}
             </span>
-          </li>
-
-          <!-- 
-          <li class="contact">
-            <img src="img/avatar_1.jpg" alt="">
-            <span>
-              Michele
-            </span>
-          </li> -->
-<!-- 
-          <li class="contact">
-            <img src="img/avatar_2.jpg" alt="">
-            <span>
-              Fabio
-            </span>
-          </li> -->
-
+          </li>          
         </ul> <!-- /contact-list -->
       </nav> <!-- /nav containing search bar text and contact-list -->
 
