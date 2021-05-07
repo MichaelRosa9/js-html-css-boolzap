@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: 'Lato', sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,8 +14,8 @@ body {
     /* con il linear gradient nelle parentesi posso decidere la direzione di dove colorare il div e da che punto a che punto posso decidere che colore assegnargli. */
     #249688 0px,
     #249688 15vh,
-    #DADBD4 15vh,
-    #DADBD4 100vh
+    #E7E7E7 15vh,
+    #E7E7E7 100vh
   );
 }
 
@@ -37,13 +38,48 @@ height: 100%;
   width: 35%;
 }
 
+/* user-info  */
+.container .left .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: solid 1px lightgrey;
+}
+
+.user-info .user {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.user-info .user img {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.user-info .user-buttons {
+  width: 100px;
+}
+
+.user-info .user-buttons button {
+  border: none;
+  background-color: transparent;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #A8A8A8;
+  cursor: pointer;
+}
+
+
+/* notification update */
 .container .left .notification-update {
-  height : 100px;
+  height : 90px;
   background-color: #78D5F9;
 }
 
+
 /* nav */
-.container .left nav {
+.left nav {
   height: calc(100% - 170px);
   background-color: #F9F9F9;
 }
@@ -80,7 +116,7 @@ nav .search-bar i {
 .container .right footer,
 .container .left .user-info {
   height: 70px;
-  background-color: #DADBD4;
+  background-color: #E7E7E7;
 }
 
 
