@@ -105,7 +105,7 @@ var app = new Vue({
     addImageToAvatar(image){  //funzione che mi aggiunge la proprieta avatar del singolo oggetto dei contact dentro la stringa del source dell'immagine
       return `img/avatar${image}.jpg`;      
     },
-    sendText(str, index){  //funzione che viene richiamato in riga 161 dell'html dove appena premao invio , il testo dell'input viene pushato nell'array messages dentro l'oggetto user
+    sendText(str, index){  //funzione che viene richiamato in riga 161 dell'html dove appena premi invio, il testo dell'input viene pushato nell'array messages dentro l'oggetto indicato con l'index dell'array contacts
       const message = {
         date: '10/01/2020 15:50:00',
         text: '',
@@ -113,14 +113,18 @@ var app = new Vue({
       }
       message.text = str;
       this.contacts[index].messages.push(message);
-      this.text = ''
-     /*  const recieve_message = {
-        date:
-      
-      } */
-      /* setTimeout(() => {
-        contacts[index_dir].messages.push()
-      }, 2000); */
+      this.text = '';
+     
+      //creo un oggetto con il testo 'ok' che richiamero col setTimeout
+      const message_recive = {
+        date: '10/01/2020 15:50:00',
+        text: 'ok',
+        status: 'received'
+      }
+      setTimeout(() => {  //uso il setTimeout per simulare una risposta dopo che l'utente preme Enter per inviare il messaggio
+        this.contacts[index].messages.push(message_recive);
+        console.log(message_recive.text);
+      }, 1000);
     }
 
   },computed: {
