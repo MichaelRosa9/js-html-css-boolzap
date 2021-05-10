@@ -104,7 +104,22 @@ var app = new Vue({
   methods: {
     addImageToAvatar(image){
       return `img/avatar${image}.jpg`;      
-    },    
+    },
+    sendText(str){  //funzione che viene richiamato in riga 161 dell'html dove appena premao invio , il testo dell'input viene pushato nell'array messages dentro l'oggetto user
+      const message = {
+        text: ''
+      };
+      message.text = str;
+      this.user.messages.push(message.text);
+      this.text = ''
+     /*  const recieve_message = {
+        date:
+      
+      } */
+      /* setTimeout(() => {
+        contacts[index_dir].messages.push()
+      }, 2000); */
+    }
   },computed: {
     filterContacts(){
       return this.contacts.filter((element) => {

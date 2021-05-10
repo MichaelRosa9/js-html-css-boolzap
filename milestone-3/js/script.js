@@ -13,8 +13,7 @@ var app = new Vue({
     index_dir:'0',  //uso index_dir come variabile per mostrare i messaggi di uno specifico oggetto. cliccando l'elemento li dentro l'ul "contact-list" prendo il numero della posizione e lo assegno al ciclo for dentro i messaggi
     user:{
       name:'Nome utente',
-      avatar: '_io',
-      messages:[],  //creo un array vuoto contente i messaggi che verranno inseriti dall'utente trampite l'input del footer
+      avatar: '_io',      
     },    
     contacts: [
       {
@@ -106,21 +105,22 @@ var app = new Vue({
     addImageToAvatar(image){  //funzione che mi aggiunge la proprieta avatar del singolo oggetto dei contact dentro la stringa del source dell'immagine
       return `img/avatar${image}.jpg`;      
     },
-    sendText(str){  //funzione che viene richiamato in riga 161 dell'html dove appena premao invio , il testo dell'input viene pushato nell'array messages dentro l'oggetto user
+    sendText(str, index){  //funzione che viene richiamato in riga 161 dell'html dove appena premao invio , il testo dell'input viene pushato nell'array messages dentro l'oggetto user
       const message = {
-        text: ''
-      };
-      message.text = str;
-      this.user.messages.push(message.text);
-      this.text = ''
-      const recieve_message = {
-        date:'',
-        text:'',
-        status'
+        date: '10/01/2020 15:50:00',
+        text: '',
+        status: 'sent'
       }
-      setTimeout(() => {
+      message.text = str;
+      this.contacts[index].messages.push(message);
+      this.text = ''
+     /*  const recieve_message = {
+        date:
+      
+      } */
+      /* setTimeout(() => {
         contacts[index_dir].messages.push()
-      }, 2000);
+      }, 2000); */
     }
 
   },computed: {

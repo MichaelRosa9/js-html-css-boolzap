@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <title>Document 2</title>
 </head>
 <body>
   
@@ -149,10 +149,12 @@
           <i class="far fa-smile"></i> <!-- smile icon -->
         </button>
 
-        <input type="text"
-          v-model="text"
-          @keyUp.enter= "pushMessage(text)"
-          placeholder="Scrivi un messaggio">
+         <!-- input text message -->
+         <input type="text"
+         v-model="text"
+         @keyUp.enter="sendText(text)"
+         placeholder="Scrivi un messaggio">
+         <!-- /input text message -->
 
         <button>
           <i class="fas fa-microphone"></i> <!-- microphone icon -->

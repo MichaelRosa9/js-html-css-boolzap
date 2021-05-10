@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <title>Document 3</title>
 </head>
 <body>
   
@@ -118,36 +118,31 @@
       </header> <!-- /contact info -->      
 
       <section>
-        <!-- message recieved -->
         <template v-for="message in contacts[index_dir].messages">
-          <div class="message">
-            <div class="recieved speech-bubble">
+
+          <div class="message"> <!-- sent message -->
+            <div class="sent speech-bubble"
+            v-if="message.status === 'sent'">
+              {{ message.text }}
+              <div class="date">
+                {{ message.date }}
+              </div>
+              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
+            </div>
+          </div> <!-- /sent message -->
+
+          <div class="message"> <!-- recieved message -->
+            <div class="recieved speech-bubble"
+            v-if="message.status === 'received'">
               {{ message.text }}
               <div class="date">
                 10/01/2020 15:30:55
               </div>
               <i class="fas fa-chevron-down"></i> <!-- down arrow -->
             </div>
-          </div>
+          </div> <!-- /recieved message -->
 
-        </template>        
-        <!-- /message recieved -->
-        
-
-        <!-- message sent -->
-        <template v-for="message in user.messages"> <!-- faccio un ciclo for per stampare piu messaggi a seconda di quanti sono stati messi dall'utente tramite il keyUp dell'input del footer -->
-          <div class="message">
-            <div class="sent speech-bubble">           
-              {{message}}
-              <div class="date">
-                10/01/2020 15:30:55
-              </div>
-              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
-            </div>
-          </div>
         </template>
-        <!-- /message sent -->
-
       </section>
 
       <footer>
@@ -158,7 +153,7 @@
         <!-- input text message -->
         <input type="text"
         v-model="text"
-        @keyUp.enter="sendText(text)"
+        @keyUp.enter="sendText(text, index_dir)"
         placeholder="Scrivi un messaggio">
         <!-- /input text message -->
 
