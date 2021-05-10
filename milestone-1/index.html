@@ -17,13 +17,13 @@
 
     <aside class="left"> <!-- left -->
 
-      <header id="account" class="account-info"> <!-- account info -->
+      <header id="user" class="account-info"> <!-- account info -->
         
         <div class="account"> <!-- account avatar + account name -->
-          <img src="img/avatar_io.jpg" alt="">
+          <img :src="'img/avatar'+ user.avatar +'.jpg'" alt="">
           
           <div class="name">
-            Nome Utente
+            {{ user.name }}
           </div>
         </div> <!-- /account avatar + account name -->
 
@@ -68,16 +68,15 @@
         </div> 
 
         <ul class="contact-list"> <!-- contact-list -->
-          
-          <li
-            v-for="contact in filterContacts"
-          >
-          <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
-            <img :src="addImageToAvatar(contact.avatar)" alt="">
-            <span>
-              {{contact.name}}
-            </span>
-          </li>          
+          <template v-for="contact in filterContacts">
+            <li>
+            <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
+              <img :src="addImageToAvatar(contact.avatar)" alt="">
+              <span>
+                {{contact.name}}
+              </span>
+            </li>
+          </template>
         </ul> <!-- /contact-list -->
       </nav> <!-- /nav containing search bar text and contact-list -->
 
@@ -120,7 +119,7 @@
 
       <section>
         <div class="message">
-          <div class="my-message speech-bubble">
+          <div class="sent speech-bubble">
             Hai portato a spassos il cane?
             <div class="date">
               10/01/2020 15:30:55
@@ -131,7 +130,7 @@
         </div>
 
         <div class="message">
-          <div class="contact-message speech-bubble">
+          <div class="recieved speech-bubble">
             Lorem ipsum dolor
             <div class="date">
               10/01/2020 15:30:55
@@ -147,7 +146,10 @@
           <i class="far fa-smile"></i> <!-- smile icon -->
         </button>
 
-        <input type="text" name="" placeholder="Scrivi un messaggio">
+        <input type="text"
+          v-model="text"
+          @keyUp.enter= "pushMessage(text)"
+          placeholder="Scrivi un messaggio">
 
         <button>
           <i class="fas fa-microphone"></i> <!-- microphone icon -->
@@ -159,6 +161,8 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/locale/it.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

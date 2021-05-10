@@ -56,7 +56,7 @@ height: 100%;
 }
 
 .account-info .account img {
-  width: 10%;
+  width: 50px;
   border-radius: 50%;
 }
 
@@ -221,13 +221,13 @@ nav .search-bar i {
  margin-top: 20px;
 }
 
-.message .my-message {
+.message .sent {
   float: right;
   margin-right: 50px;
   background-color: #CCF8B5;
 }
 
-.message .contact-message {
+.message .recieved {
   float: left;
   margin-left: 50px;
   background-color: white;

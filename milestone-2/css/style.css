@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient( to bottom,
+    /* con il linear gradient nelle parentesi posso decidere la direzione di dove colorare il div e da che punto a che punto posso decidere che colore assegnargli. */
+    #249688 0px,
+    #249688 15vh,
+    #E7E7E7 15vh,
+    #E7E7E7 100vh
+  );
+}
+
+
+.container {
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+  background-color: white;
+}
+
+.container .left,
+.container .right {
+float: left;
+height: 100%;
+}
+
+.container .right header,
+.container .right footer,
+.container .left header {
+  height: 70px;
+  background-color: #E7E7E7;
+}
+
+/* avatar info  */
+.container .left .account-info,
+.container .right .account-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: solid 1px lightgrey;
+}
+
+.account-info .account {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+
+.account-info .account img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.account-info .account-buttons {
+  width: 200px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.account-info .account-buttons button {
+  border: none;
+  background-color: transparent;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #A8A8A8;
+  cursor: pointer;
+}
+/* END of avatar info */
+
+
+/* container left */
+.container .left {
+  width: 35%;
+}
+
+
+/* notification update */
+.container .left .notification-update {
+  height : 80px;
+  display: flex;
+  align-items: center;
+  background-color: #78D5F9;
+}
+
+.left .notification-update i {
+  margin-left: 20px;
+  margin-right: 10px;
+  padding: 15px;
+  font-size: 20px;
+  color: #78D5F9;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.notification-update .notification-text h4 {
+  font-weight: 400;
+}
+
+.notification-update .notification-text span{
+  font-size: 13px;
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* END notification update */
+
+
+/* nav */
+.left nav {
+  height: calc(100% - 150px);
+  background-color: #F9F9F9;
+}
+
+/* search bar */
+nav .search-bar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 8px;
+  color: grey;
+}
+
+nav .search-bar input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  padding: 5px 50px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+}
+nav .search-bar i {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+/* END search bar */
+
+
+/* contacts */
+.left .contact-list {
+  height: calc(100% - 50px);
+  margin-right: 15px;
+  list-style: none;
+  background-color: white;
+  border-right: solid 1px rgba(0, 0, 0, .1);
+}
+
+.left .contact-list li {
+  padding: 10px 0;
+  border-bottom: solid 1px #F2F3F3;
+}
+
+.left .contact-list li:last-child {
+  border: none;
+}
+
+.left .contact-list li:hover {
+  cursor: pointer;
+  background-color: #F2F3F3;
+}
+
+.left .contact-list li img{
+  width: 10%;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+
+.left .contact-list li span {
+  vertical-align: top;
+}
+/* END contacts */
+
+
+/* container right */
+.container .right {
+  width: 65%;  
+}
+/* right header */
+.container .right header {
+  border: none;
+}
+
+.right .contact-name-log {
+  margin-left: 10px;
+}
+
+.right .contact-name-log .last-log{
+  margin-top: 3px;
+  font-size: 13px;
+  color: grey;
+}
+/* END right header */
+
+
+/* message section */
+.container .right section {
+  position: relative;
+  height: calc(100% - 140px);
+  background-image: url(../img/mine.jpg);
+  overflow: auto;
+}
+
+.right section .message {
+ display: table;
+ content: '';
+ clear: both;
+ width: 100%;
+ margin-top: 20px;
+}
+
+.message .sent {
+  float: right;
+  margin-right: 50px;
+  background-color: #CCF8B5;
+}
+
+.message .recieved {
+  float: left;
+  margin-left: 50px;
+  background-color: white;
+}
+
+.message .speech-bubble {
+  position: relative;
+  max-width: 290px;
+  min-width: 200px;
+  padding: 15px 50px 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+}
+
+.message .speech-bubble i{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: grey;
+  display: none;
+}
+
+.message .speech-bubble:hover i {
+  display: inline-block;
+}
+
+.date {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  font-size: 10px;
+  color: grey;
+}
+/* /message section */
+
+
+/* footer */
+.container .right footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: grey;
+  background-color: #F2EBE7;
+}
+
+.right footer input {
+  height: 70%;
+  width: 85%;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.right footer button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+/* END footer */
+/* END container right */
