@@ -120,7 +120,18 @@
       <section>
         <template v-for="message in contacts[index_dir].messages">
           <div class="message">
-            <div class="recieved speech-bubble">
+            <div class="sent speech-bubble"
+            v-if="message.status === 'sent'">
+              {{ message.text }}
+              <div class="date">
+                10/01/2020 15:30:55
+              </div>
+              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
+            </div>
+          </div>
+          <div class="message">
+            <div class="recieved speech-bubble"
+            v-if="message.status === 'received'">
               {{ message.text }}
               <div class="date">
                 10/01/2020 15:30:55
@@ -129,17 +140,7 @@
             </div>
           </div>
 
-        </template>        
-
-        <div class="message">
-          <div class="sent speech-bubble">           
-            <div class="date">
-              10/01/2020 15:30:55
-            </div>
-            loerm
-            <i class="fas fa-chevron-down"></i> <!-- down arrow -->
-          </div>
-        </div>
+        </template>
       </section>
 
       <footer>

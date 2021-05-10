@@ -113,7 +113,16 @@ var app = new Vue({
       message.text = str;
       this.user.messages.push(message.text);
       this.text = ''
+      const recieve_message = {
+        date:'',
+        text:'',
+        status'
+      }
+      setTimeout(() => {
+        contacts[index_dir].messages.push()
+      }, 2000);
     }
+
   },computed: {
     filterContacts(){ //filtro per i contatti nella sezione aside.left dell'html
       return this.contacts.filter((element) => {
