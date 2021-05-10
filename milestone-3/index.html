@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app" class="container">
+
+    <aside class="left"> <!-- left -->
+
+      <header id="user" class="account-info"> <!-- account info -->
+        
+        <div class="account"> <!-- account avatar + account name -->
+          <img :src="'img/avatar'+ user.avatar +'.jpg'" alt="">
+          
+          <div class="name">
+            {{ user.name }}
+          </div>
+        </div> <!-- /account avatar + account name -->
+
+        <div class="account-buttons"> <!-- account buttons -->
+          <button class="circle">
+            <i class="fas fa-circle-notch"></i> <!-- spinner circle icon -->
+          </button>
+  
+          <button class="message">
+            <i class="fas fa-comment-alt"></i> <!-- message icon -->
+          </button>
+
+          <button class="settings">
+            <i class="fas fa-ellipsis-v"></i> <!-- settings icon -->
+          </button>
+        </div> <!-- /account buttons -->
+
+      </header> <!-- /account info -->
+
+      <div class="notification-update"> <!-- notification update -->
+
+        <i class="fas fa-bell-slash"></i> <!-- notification bell -->
+
+        <div class="notification-text">
+          <h4>
+            Ricevi notifiche di nuovi messaggi
+          </h4>
+          
+          <span>
+            Attiva notifiche desktop
+          </span>
+        </div>
+      </div> <!-- /notification update -->
+
+      <nav> <!-- nav containing search bar text and contact-list -->
+        <div class="search-bar">
+          <input type="text" 
+          v-model="search" 
+          placeholder="Cerca o inizia una nuova chat"            
+          >
+          <i class="fas fa-search"></i> <!-- search icon -->
+        </div> 
+
+        <ul class="contact-list"> <!-- contact-list -->
+          <template v-for="(contact, index) in filterContacts">
+            <li @click="index_dir = index">
+            <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
+              <img :src="addImageToAvatar(contact.avatar)" alt="">
+              <span>
+                {{contact.name}}
+              </span>
+            </li>
+          </template>
+        </ul> <!-- /contact-list -->
+      </nav> <!-- /nav containing search bar text and contact-list -->
+
+
+    </aside> <!-- /left -->
+
+    <main class="right"> <!-- right -->
+      
+      <header id="contact" class="account-info"> <!-- contact info -->
+      
+        <div class="account"> <!-- account account + account name -->
+          <img :src="addImageToAvatar(contacts[index_dir].avatar)" alt="">
+          
+          <div class="contact-name-log">
+            <div class="name">
+              {{contacts[index_dir].name}}
+            </div>
+            <div class="last-log">
+              Ultimo accesso oggi alle
+            </div>
+          </div>
+        </div> <!-- /account account + account name -->
+
+
+        <div class="account-buttons"> <!-- account buttons -->
+          <button class="circle">
+            <i class="fas fa-search"></i> <!-- search icon -->
+          </button>
+  
+          <button class="message">
+            <i class="fas fa-paperclip"></i> <!-- paperclip icon -->
+          </button>
+
+          <button class="settings">
+            <i class="fas fa-ellipsis-v"></i> <!-- settings icon -->
+          </button>
+        </div> <!-- /account buttons -->
+
+      </header> <!-- /contact info -->      
+
+      <section>
+        <!-- message recieved -->
+        <template v-for="message in contacts[index_dir].messages">
+          <div class="message">
+            <div class="recieved speech-bubble">
+              {{ message.text }}
+              <div class="date">
+                10/01/2020 15:30:55
+              </div>
+              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
+            </div>
+          </div>
+
+        </template>        
+        <!-- /message recieved -->
+        
+
+        <!-- message sent -->
+        <template v-for="message in user.messages"> <!-- faccio un ciclo for per stampare piu messaggi a seconda di quanti sono stati messi dall'utente tramite il keyUp dell'input del footer -->
+          <div class="message">
+            <div class="sent speech-bubble">           
+              {{message}}
+              <div class="date">
+                10/01/2020 15:30:55
+              </div>
+              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
+            </div>
+          </div>
+        </template>
+        <!-- /message sent -->
+
+      </section>
+
+      <footer>
+        <button>
+          <i class="far fa-smile"></i> <!-- smile icon -->
+        </button>
+
+        <!-- input text message -->
+        <input type="text"
+        v-model="text"
+        @keyUp.enter="sendText(text)"
+        placeholder="Scrivi un messaggio">
+        <!-- /input text message -->
+
+        <button>
+          <i class="fas fa-microphone"></i> <!-- microphone icon -->
+        </button>
+      </footer>
+
+    </main> <!-- /right -->
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/locale/it.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
