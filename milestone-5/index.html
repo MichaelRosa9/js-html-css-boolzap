@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <title>Document 4</title>
+  <title>Document 5</title>
 </head>
 <body>
   
@@ -124,17 +124,21 @@
 
       <section>
         <template v-for="message in filterContacts[index_dir].messages">
-
-          <div class="message"> <!-- sent message -->
-            <div class="sent speech-bubble"
-            v-if="message.status === 'sent'">
+          <div class="message"> <!-- message section -->
+            
+            <!-- speech bubble -->
+            <div class="speech-bubble" 
+            :class="message.status === 'sent' ? 'sent' : 'recieved' ">  
               {{ message.text }}
+
               <div class="date">
                 {{ message.date }}
               </div>
+
               <i class="fas fa-chevron-down"
                 @click="messages_dropdown = !messages_dropdown"
               ></i> <!-- down arrow -->
+              
               <ul class="dropdown_messagesetting"
               :class="messages_dropdown === true ? 'active' : null">
                 <li>
@@ -144,19 +148,11 @@
                   Delete message
                 </li>
               </ul>
-            </div>
-          </div> <!-- /sent message -->
+            </div> <!-- /speech bubble -->
 
-          <div class="message"> <!-- recieved message -->
-            <div class="recieved speech-bubble"
-            v-if="message.status === 'received'">
-              {{ message.text }}
-              <div class="date">
-                {{ message.date }}
-              </div>
-              <i class="fas fa-chevron-down"></i> <!-- down arrow -->
-            </div>
-          </div> <!-- /recieved message -->
+          </div> <!-- /message section -->
+
+          
 
         </template>
       </section>

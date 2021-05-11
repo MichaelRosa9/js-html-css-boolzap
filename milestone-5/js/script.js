@@ -116,9 +116,6 @@ var app = new Vue({
     inputFocus(){
       this.$refs.input.focus();
     },
-    dropdown(){
-
-    },
     sendText(str, index){  //funzione che viene richiamato in riga 161 dell'html dove appena premi invio, il testo dell'input viene pushato nell'array messages dentro l'oggetto indicato con l'index dell'array contacts
       const message = {
         date: '10/01/2020 15:50:00',
