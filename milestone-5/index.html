@@ -61,10 +61,13 @@
       <nav> <!-- nav containing search bar text and contact-list -->
         <div class="search-bar">
           <input type="text" 
-          v-model="search" 
-          placeholder="Cerca o inizia una nuova chat"            
+            v-model="search" 
+            placeholder="Cerca o inizia una nuova chat"
+            ref="input"
           >
-          <i class="fas fa-search"></i> <!-- search icon -->
+          <i class="fas fa-search"
+            @click="inputFocus"
+          ></i> <!-- search icon -->
         </div> 
 
         <ul class="contact-list"> <!-- contact-list -->
@@ -130,8 +133,17 @@
                 {{ message.date }}
               </div>
               <i class="fas fa-chevron-down"
-                @click=""
+                @click="messages_dropdown = !messages_dropdown"
               ></i> <!-- down arrow -->
+              <ul class="dropdown_messagesetting"
+              :class="messages_dropdown === true ? 'active' : null">
+                <li>
+                  Message info
+                </li>
+                <li @click="">
+                  Delete message
+                </li>
+              </ul>
             </div>
           </div> <!-- /sent message -->
 

@@ -172,7 +172,8 @@ nav .search-bar i {
   background-color: #F2F3F3;
 }
 
-.left .contact-list li:hover {
+.left .contact-list li:hover,
+.speech-bubble .dropdown_messagesetting li:hover {
   cursor: pointer;
   background-color: #F2F3F3;
 }
@@ -259,6 +260,28 @@ nav .search-bar i {
 .message .speech-bubble:hover i {
   display: inline-block;
 }
+
+.message .speech-bubble .dropdown_messagesetting {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 5;
+  padding: 2%;
+  font-size: 15px;
+  list-style: none;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 3px 4px 9px rgba(0, 0, 0, .1);
+}
+.message .speech-bubble .dropdown_messagesetting.active {
+  display: inline-block;
+}
+
+.speech-bubble .dropdown_messagesetting li {
+  padding: 15px 20px;
+}
+
 
 .date {
   position: absolute;
