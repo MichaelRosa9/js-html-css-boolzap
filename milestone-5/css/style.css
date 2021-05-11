@@ -253,6 +253,7 @@ nav .search-bar i {
   right: 20px;
   color: grey;
   display: none;
+  cursor: pointer;
 }
 
 .message .speech-bubble:hover i {
