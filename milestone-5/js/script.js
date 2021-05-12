@@ -151,6 +151,10 @@ var app = new Vue({
         return spliceMsg;
       }
       return contactMsgs[contactMsgs.length-1].text;
+    },
+    deleteMessage(message_position){
+      this.filterContacts[this.index_dir].messages.splice(message_position, 1);
+      
     }
   }
   

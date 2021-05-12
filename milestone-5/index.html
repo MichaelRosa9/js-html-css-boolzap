@@ -138,21 +138,23 @@
                 {{ message.date }}
               </div>
 
+              <!-- con l'@click do la direttiva di quale dropdown voglio indicare -->
               <i class="fas fa-chevron-down"                
                 @click="index_dropdown = index"            
               ></i> <!-- down arrow -->
               
+              <!-- con il v-if e il v-else decido se far apparire o scompaarire il doropdown menu -->
               <ul class="dropdown_messagesetting"
                 v-if="index === index_dropdown"
-                v-else="index= !index"
+                v-else="index= !index"               
               >
                 <li>
                   Message info
                 </li>
-                <li @click="">
+                <li @click="deleteMessage(index_dropdown)">
                   Delete message
                 </li>
-              </ul>
+              </ul>              
             </div> <!-- /speech bubble -->
 
           </div> <!-- /message section -->

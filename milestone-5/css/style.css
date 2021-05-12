@@ -273,7 +273,6 @@ nav .search-bar i {
 }
 
 .message .speech-bubble .dropdown_messagesetting {
-/*   display: none; */
   position: absolute;
   top: 25px;
   right: 20px;
@@ -285,9 +284,6 @@ nav .search-bar i {
   background-color: white;
   box-shadow: 3px 4px 9px rgba(0, 0, 0, .1);
 }
-/* .message .speech-bubble .dropdown_messagesetting.active {
-  display: inline-block;
-} */
 
 .speech-bubble .dropdown_messagesetting li {
   padding: 15px 20px;
