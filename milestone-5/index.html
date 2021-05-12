@@ -77,8 +77,11 @@
             >
             <!-- 'img/avatar' + contact.avatar+ '.jpg' -->
               <img :src="addImageToAvatar(contact.avatar)" alt="">
-              <span>
-                {{contact.name}}
+              <span class="contact-name">
+                {{ contact.name }}
+              </span>
+              <span class="last-message">
+                {{ lastMessage(index) }}
               </span>
             </li>
           </template>
@@ -100,7 +103,7 @@
               {{filterContacts[index_dir].name}}
             </div>
             <div class="last-log">
-              Ultimo accesso oggi alle
+              Ultimo accesso: {{ lastAccess(index_dir) }}
             </div>
           </div>
         </div> <!-- /account account + account name -->
@@ -123,7 +126,7 @@
       </header> <!-- /contact info -->      
 
       <section>
-        <template v-for="message in filterContacts[index_dir].messages">
+        <template v-for="(message, index) in filterContacts[index_dir].messages">
           <div class="message"> <!-- message section -->
             
             <!-- speech bubble -->
@@ -135,12 +138,14 @@
                 {{ message.date }}
               </div>
 
-              <i class="fas fa-chevron-down"
-                @click="messages_dropdown = !messages_dropdown"
+              <i class="fas fa-chevron-down"                
+                @click="index_dropdown = index"            
               ></i> <!-- down arrow -->
               
               <ul class="dropdown_messagesetting"
-              :class="messages_dropdown === true ? 'active' : null">
+                v-if="index === index_dropdown"
+                v-else="index= !index"
+              >
                 <li>
                   Message info
                 </li>
@@ -164,7 +169,7 @@
 
         <!-- input text message -->
         <input type="text"
-        v-model="text"
+        v-model.trim="text"
         @keyUp.enter="sendText(text, index_dir)"
         placeholder="Scrivi un messaggio">
         <!-- /input text message -->

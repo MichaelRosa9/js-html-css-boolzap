@@ -160,6 +160,7 @@ nav .search-bar i {
 }
 
 .left .contact-list li {
+  position: relative;
   padding: 10px 0;
   border-bottom: solid 1px #F2F3F3;
 }
@@ -184,8 +185,17 @@ nav .search-bar i {
   border-radius: 50%;
 }
 
-.left .contact-list li span {
-  vertical-align: top;
+.left .contact-list li .contact-name {
+  position: absolute;
+  top: 10px;
+}
+
+.left .contact-list li .last-message {
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+  color: lightgray;
+  vertical-align: bottom;
 }
 /* END contacts */
 
@@ -246,6 +256,7 @@ nav .search-bar i {
   padding: 15px 50px 25px 20px;
   border-radius: 10px;
   box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+  word-wrap: break-word;/* con questo compando evito che se scrivo una parola troppo lunga, il testo viene spezzato in modo da non uscire dal box messaggio */
 }
 
 .message .speech-bubble i{
@@ -262,7 +273,7 @@ nav .search-bar i {
 }
 
 .message .speech-bubble .dropdown_messagesetting {
-  display: none;
+/*   display: none; */
   position: absolute;
   top: 25px;
   right: 20px;
@@ -274,9 +285,9 @@ nav .search-bar i {
   background-color: white;
   box-shadow: 3px 4px 9px rgba(0, 0, 0, .1);
 }
-.message .speech-bubble .dropdown_messagesetting.active {
+/* .message .speech-bubble .dropdown_messagesetting.active {
   display: inline-block;
-}
+} */
 
 .speech-bubble .dropdown_messagesetting li {
   padding: 15px 20px;
